@@ -1,0 +1,27 @@
+def decodificar_mensagem(mensagem_codificada):
+  mapa={
+      '6': 'F',
+      '5': 'E',
+      '50': 'L',
+      '1': 'I',
+      '26': 'Z',
+      'MM': '2000',
+      'R': '18'
+  }
+
+  codigos = ['50', '26', 'MM', '6', '5', '1', 'R']
+  
+  for chave in codigos:
+      valor = mapa[chave]
+      mensagem_codificada = mensagem_codificada.replace(chave, valor)
+      mensagem_codificada = mensagem_codificada.replace("2000", " 20")
+
+  return mensagem_codificada
+    
+    
+mensagem_codificada = "6550126MMR"
+
+
+mensagem_decodificada = decodificar_mensagem(mensagem_codificada)
+print(f"Mensagem Codificada: {mensagem_codificada}")
+print(f"Mensagem Decodificada: {mensagem_decodificada}")
